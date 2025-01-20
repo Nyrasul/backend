@@ -73,8 +73,44 @@ The API provides the following functionalities:
     *   Retrieves user information from the database using the user ID from the token.
 
 *   **CRUD Operations for Posts:**
-    *   Provides routes for creating, retrieving lists of posts, retrieving a single post, updating, and deleting posts.
-    *   Implements the necessary logic for each operation.
+
+* **Upload Image (`POST /upload`):**
+    * Requires authentication (`checkAuth` middleware).
+    * Uses Multer middleware (`upload.single('image')`) to handle single image uploads.
+    * Upon successful upload, responds with a JSON object containing the URL of the uploaded image: `{ url: "/uploads/<original_filename>" }`.
+
+* **Get Latest Tags (`GET /tags`):**
+    * Retrieves a list of the latest tags associated with posts.
+    * Implemented in the `PostController.getLastTags` function.
+
+* **Get All Posts (`GET /posts`):**
+    * Retrieves a list of all posts.
+    * Implemented in the `PostController.getAll` function.
+
+* **Get Posts by Tags (`GET /posts/tags`):**
+    * Retrieves a list of posts filtered by tags (implementation details not provided).
+    * Likely uses similar logic to `GET /tags`.
+
+* **Get Single Post (`GET /posts/:id`):**
+    * Retrieves a single post by its ID.
+    * Implemented in the `PostController.getOne` function.
+
+* **Create Post (`POST /posts`):**
+    * Requires authentication (`checkAuth` middleware).
+    * Validates the request body using `postCreateValidation` middleware.
+    * Handles potential validation errors using `handleValidationErrors` middleware.
+    * Creates a new post using the `PostController.create` function.
+
+* **Delete Post (`DELETE /posts/:id`):**
+    * Requires authentication (`checkAuth` middleware).
+    * Deletes a post by its ID using the `PostController.remove` function.
+
+* **Update Post (`PATCH /posts/:id`):**
+    * Requires authentication (`checkAuth` middleware).
+    * Validates the request body using `postCreateValidation` middleware.
+    * Handles potential validation errors using `handleValidationErrors` middleware.
+    * Updates a post by its ID using the `PostController.update` function.
+
 
 *   **Image Uploads:**
     *   Uses Multer to handle file uploads.
