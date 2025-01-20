@@ -20,6 +20,7 @@ Proposal for the backend development of a social media application.
 *   File handling and storage (Multer)
 *   Error handling and debugging
 *   Version control (Git)
+*   Api request control (Insomnia)
 
 **Alignment with Course Goals:** This project aligns with the course objectives of mastering backend frameworks, designing RESTful APIs, working with databases, implementing secure authentication, and deploying applications.
 
