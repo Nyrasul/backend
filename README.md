@@ -15,6 +15,8 @@ Proposal for the backend development of a social media application.
 **Skills to be Developed:**
 
 *   RESTful API design and development (Node.js, Express.js)
+*   Frontend skills and routing(React)
+*   HTTP requests from the browser or Node.js (Axios)
 *   Database management (MongoDB, Mongoose)
 *   User authentication and authorization (JWT)
 *   File handling and storage (Multer)
@@ -50,13 +52,15 @@ Proposal for the backend development of a social media application.
 | Week 7  | Implement tag retrieval for posts                | Functionality to retrieve posts by tags                                      |
 | Week 8  | Implement error handling and validation          | Robust error handling and input validation                                    |
 | Week 9  | Test API endpoints (Insomnia/Postman)       | Fully tested and debugged API                                                |
-| Week 10 | Deployment and documentation                   | Deployed backend and complete API documentation                               |
+| Week 10 | Create visual side of website                  |  Fully tested and debugged frontend                              |
+| Week 11 | Deployment and documentation                   | Deployed backend/frontend and complete API documentation       |
 
 ## 5. Technology Stack
 
 **Technologies/Tools:**
 
 *   **Back-End Framework:** Express.js (Node.js)
+*   **Front-End Framework:** React (Node.js)
 *   **Database:** MongoDB
 *   **Version Control:** GitHub
 *   **Deployment Tools:** Heroku (or similar)
@@ -64,6 +68,7 @@ Proposal for the backend development of a social media application.
 **Why these tools?**
 
 *   **Express.js:** Widely used, mature, simplifies API development. Lightweight and performant.
+*   **React:**  Simplicity, low learning curve, lightweight API, flexibility.
 *   **MongoDB:** Flexible NoSQL database, well-suited for social media data.
 *   **GitHub:** Industry standard for version control and collaboration.
 *   **Heroku:** PaaS for simplified application deployment and hosting.
