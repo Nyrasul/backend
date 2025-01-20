@@ -1,6 +1,6 @@
-# Backend for a Social Media Application
+# Social Media Application
 
-Proposal for the backend development of a social media application.
+Proposal for the development of a social media application.
 
 ## 1. Project Overview
 
