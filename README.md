@@ -28,19 +28,18 @@ The backend development follows these key steps:
 The project is structured as follows:
 
 server/
-> index.js             // Main application file
-> models/
-  > User.js          // User model
-  > Post.js          // Post model
-> routes/
-  > auth.js          // Authentication routes
-  > posts.js         // Post routes
-> middleware/
-  > checkAuth.js     // JWT verification middleware
-  > handleValidationErrors.js // Validation error handling
-> uploads/             // Folder for uploaded images
-> package.json
-
+├── index.js             // Main application file
+├── models/
+│   └── User.js          // User model
+│   └── Post.js          // Post model
+├── routes/
+│   └── auth.js          // Authentication routes
+│   └── posts.js         // Post routes
+├── middleware/
+│   └── checkAuth.js     // JWT verification middleware
+│   └── handleValidationErrors.js // Validation error handling
+├── uploads/             // Folder for uploaded images
+└── package.json
 
 Key structural elements:
 
