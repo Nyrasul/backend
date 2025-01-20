@@ -125,6 +125,8 @@ The API provides the following functionalities:
 ### API Testing
 
 *   Use Insomnia or Postman to test API endpoints.
+*   ![image](https://github.com/user-attachments/assets/c624a301-a850-440e-afea-727172528f37)
+
 
 ## Key Considerations
 
