@@ -70,17 +70,66 @@ Proposal for the backend development of a social media application.
 ## 6. API Endpoints
 
 The backend provides the following API endpoints:
+The API provides the following functionalities:
 
+**User Management:**
+
+*   **Registration (`POST /auth/register`):**
+    *   Validates input data using Express Validator (e.g., required fields, email format).
+    *   Hashes the password using BCrypt.
+    *   Saves the new user to the MongoDB database.
+    *   Handles potential errors.
+
+*   **Authentication (Login) (`POST /auth/login`):**
+    *   Finds the user in the database by email.
+    *   Compares the entered password with the stored hash using BCrypt.
+    *   Generates a JWT upon successful authentication.
+    *   Sends the JWT to the client.
+
+*   **Profile Information Retrieval (`GET /auth/me`):**
+    *   Protected route accessible only to authenticated users.
+    *   Uses middleware (`checkAuth.js`) to verify the JWT.
+    *   Retrieves user information from the database using the user ID from the token.
+      
 **Post Management:**
 
-*   **Upload Image (`POST /upload`):** Requires authentication. Handles single image uploads using Multer. Responds with `{ url: "/uploads/<original_filename>" }`.
-*   **Get Latest Tags (`GET /tags`):** Retrieves latest post tags.
-*   **Get All Posts (`GET /posts`):** Retrieves all posts.
-*   **Get Posts by Tags (`GET /posts/tags`):** Retrieves posts filtered by tags.
-*   **Get Single Post (`GET /posts/:id`):** Retrieves a single post by ID.
-*   **Create Post (`POST /posts`):** Requires authentication. Validates input. Creates a new post.
-*   **Delete Post (`DELETE /posts/:id`):** Requires authentication. Deletes a post by ID.
-*   **Update Post (`PATCH /posts/:id`):** Requires authentication. Validates input. Updates a post by ID.
+* **Upload Image (`POST /upload`):**
+    * Requires authentication (`checkAuth` middleware).
+    * Uses Multer middleware (`upload.single('image')`) to handle single image uploads.
+    * Upon successful upload, responds with a JSON object containing the URL of the uploaded image: `{ url: "/uploads/<original_filename>" }`.
+
+* **Get Latest Tags (`GET /tags`):**
+    * Retrieves a list of the latest tags associated with posts.
+    * Implemented in the `PostController.getLastTags` function.
+
+* **Get All Posts (`GET /posts`):**
+    * Retrieves a list of all posts.
+    * Implemented in the `PostController.getAll` function.
+
+* **Get Posts by Tags (`GET /posts/tags`):**
+    * Retrieves a list of posts filtered by tags (implementation details not provided).
+    * Likely uses similar logic to `GET /tags`.
+
+* **Get Single Post (`GET /posts/:id`):**
+    * Retrieves a single post by its ID.
+    * Implemented in the `PostController.getOne` function.
+
+* **Create Post (`POST /posts`):**
+    * Requires authentication (`checkAuth` middleware).
+    * Validates the request body using `postCreateValidation` middleware.
+    * Handles potential validation errors using `handleValidationErrors` middleware.
+    * Creates a new post using the `PostController.create` function.
+
+* **Delete Post (`DELETE /posts/:id`):**
+    * Requires authentication (`checkAuth` middleware).
+    * Deletes a post by its ID using the `PostController.remove` function.
+
+* **Update Post (`PATCH /posts/:id`):**
+    * Requires authentication (`checkAuth` middleware).
+    * Validates the request body using `postCreateValidation` middleware.
+    * Handles potential validation errors using `handleValidationErrors` middleware.
+    * Updates a post by its ID using the `PostController.update` function.
+
 
 ## 7. Project Structure
 
@@ -120,6 +169,6 @@ ES6 modules are used.
 
 ## 9. Team Members & Instructor
 
-*   **Team Members:** \Myrzabek Nurasyl
+*   **Team Members:** Myrzabek Nurasyl
 *   **Instructor Name:** Bekzat Ajan
-*   **Submission Date:** \02.01.2025
+*   **Submission Date:** 02.01.2025
