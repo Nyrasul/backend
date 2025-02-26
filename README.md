@@ -48,7 +48,7 @@ server/
 ├── models/
 │ ├── User.js // User model
 │ └── Post.js // Post model
-├── routes/
+├── controllers/
 │ ├── auth.js // Authentication routes
 │ └── posts.js // Post routes
 ├── middleware/
@@ -61,7 +61,7 @@ server/
 ### **Key Structural Elements**:  
 - **`index.js`**: Application entry point.  
 - **`models/`**: Mongoose data models for users and posts.  
-- **`routes/`**: API endpoint definitions for authentication and posts.  
+- **`controllers/`**: API endpoint definitions for authentication and posts.  
 - **`middleware/`**: Middleware functions for authentication, validation, and error handling.  
 - **`uploads/`**: Folder for storing uploaded files (e.g., images).  
 - **ES6 Modules**: Used for modern JavaScript syntax and modularity.
